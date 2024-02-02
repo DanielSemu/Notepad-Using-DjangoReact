@@ -64,6 +64,7 @@ let deleteNote =async ()=>{
       
     });
     navigate('/');
+    // this a comment
   } catch (error) {
     console.error('Error updating note:', error);
   }
