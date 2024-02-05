@@ -8,12 +8,7 @@ const NotePage = () => {
   const navigate = useNavigate();
 
   const [note, setNote] = useState(null);
-
-  useEffect(() => {
-    getNote();
-  }, [id]);
-
-  const getNote = async () => {
+const getNote = async () => {
     try {
       if (id === 'new') return
       const response = await fetch(`/api/notes/${id}/`);
@@ -23,6 +18,11 @@ const NotePage = () => {
       console.error('Error fetching note:', error);
     }
   };
+  useEffect(() => {
+    getNote();
+  }, [id]);
+
+  
   
 
   const updateNote = async () => {
