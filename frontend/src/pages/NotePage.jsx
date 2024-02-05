@@ -27,6 +27,7 @@ const NotePage = () => {
 
   const updateNote = async () => {
     try {
+      
       await fetch(`/api/notes/${id}/update/`, {
         method: 'PUT',
         headers: {
@@ -41,7 +42,6 @@ const NotePage = () => {
 
   const createNote = async () => {
     try {
-      console.log('log logged')
       await fetch('/api/notes/create/', {
         method: 'POST',
         headers: {
@@ -77,7 +77,7 @@ let deleteNote =async ()=>{
     else if(id !== 'new'){
       await updateNote();
     }
-    else if(id == 'new' && note !== null){
+    else if(id === 'new' && note !== null){
       
      await createNote()
     }
