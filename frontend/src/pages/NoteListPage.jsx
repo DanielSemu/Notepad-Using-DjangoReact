@@ -6,7 +6,7 @@ const NoteListPage = () => {
     let [notes, setNotes]=useState([])
 
     useEffect(()=>{
-        getNotes()
+        getNotes() 
     },[])
 
     let getNotes = async ()=>{

@@ -28,7 +28,7 @@ const getNote = async () => {
   const updateNote = async () => {
     try {
       
-      await fetch(`/api/notes/${id}/update/`, {
+      await fetch(`/api/notes/${id}/`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -42,7 +42,7 @@ const getNote = async () => {
 
   const createNote = async () => {
     try {
-      await fetch('/api/notes/create/', {
+      await fetch('/api/notes/', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -56,7 +56,7 @@ const getNote = async () => {
 
 let deleteNote =async ()=>{
   try {
-    await fetch(`/api/notes/${id}/delete/`, {
+    await fetch(`/api/notes/${id}/`, {
       method: 'DELETE',
       headers: {
         'Content-Type': 'application/json',
