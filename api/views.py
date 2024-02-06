@@ -19,37 +19,13 @@ def getNotes(request):
         return Response(serializer.data)
     if request.method =='POST':
         return createNote(request)
-        # data=request.data
-        # note =Note.objects.create(
-        #     body=data['body']
-        # )
-        # serializer= NoteSerializer(note, many=False)
-        # return Response(serializer.data)
-
 @api_view(["GET",'POST',"PUT","DELETE"])
 def getNote(request, pk):
     if request.method =='GET':
         return getSingleNote(request,pk)
-        # notes =Note.objects.get(id=pk)
-        # serializer=NoteSerializer(notes, many=False)
-        # return Response(serializer.data)
     if request.method =='PUT':
         return updateNote(request,pk)
-        # try:
-        #     note = Note.objects.get(id=pk)
-        # except Note.DoesNotExist:
-        #     return Response({"error": "Note not found"}, status=status.HTTP_404_NOT_FOUND)
-
-        # serializer = NoteSerializer(instance=note, data=request.data)
-        # if serializer.is_valid():
-        #     serializer.save()
-        #     return Response(serializer.data, status=status.HTTP_200_OK)
-        # else:
-        #     return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
     if request.method =='DELETE':
         return deleteNote(request,pk)
-        # note = Note.objects.get(id=pk)
-        # note.delete()
-        # return Response('Note Was Deleted')
-
+       
 
